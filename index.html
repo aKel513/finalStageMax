@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final step</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./md5.min.js"></script>
+    <script src="./my.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Вітаю на єтапі! | Welcome to the stage!</h1>
+    </header>
+    <main>
+         <section class="ruleBlock">
+            <h5>Завдання | Task</h5>
+            <div class = "descrBlock flexBox">
+              <article class = "ukr">
+                <p>Перекладіть цей вірш мовою ґоʼет аш та надішліть переклад Джону Доу, щоб довідатись останню частину загадки:</p>
+                <p class = "verse">
+                  У світанковий час, коли все тихо стоїть,
+                  <br>
+                  День вітає нас, ніч йде спочивати,
+                  <br>
+                  І хоч сонце завжди спускаеться на прикинці дня,
+                  <br>
+                  Світить сердце в нічному небі.
+                </p>
+                <p>Будь ласка, зберігайте порядок слів, крім випвдків, коли його треба порушити граматично.</p>
+              </article>
+              <article class = "eng">
+                <p>Please translate this verse into Go'et ax and send it to Jonh Doe in order to find out the last part of a puzzle:</p>
+                <p class = "verse">
+                  At dawn time, when everything stands tranquilly,
+                  <br>
+                  Day greets us, night goes to rest,
+                  <br>
+                  Ans although the Sun always descends in the end of a day,
+                  <br>
+                  A heart shines in the nocturnal sky.
+                </p>
+                <p>Please do not change the word order, unless grammar requires to do it.</p>
+              </article>
+            </div>
+            
+            <h5>Памʼятка | Memo</h5>
+             <div class = "descrBlock">
+              <div class = "rowDes">
+                <div class = "col1">Правильна відповідь</div>
+                <div class="success color"></div>
+                <div class = "col3">Correct answer</div>
+              </div>
+              <div class = "rowDes">
+                <div class = "col1">Неправильна відповідь</div>
+                <div class="error color"></div> 
+                <div class = "col3">Wrong answer</div>
+              </div>
+              <div class = "rowDes">
+                <div class = "col1">Правильний корень(ні), неправильна граматика/правопис</div>
+                <div class="mistake color"></div>
+                <div class = "col3">Correct root(s), wrong grammar/spelling</div>
+              </div>
+              <div class = "rowDes">
+                <div class = "col1">Правильне слово, неправильна комірка</div>
+                <div class="mistakePlace color"></div>
+                <div class = "col3">Correct word, wrong place</div>
+              </div>
+             </div>
+         </section>
+
+         <section class="inputBlock">
+          <h5>Вірш | Verse:</h5>
+            <div class = "rows">
+                <div class="elem"><input type="text" id="word1" name="word1" placeholder="Enter text"></div>
+                <div class="elem"><input type="text" id="word2" name="word2" value="katmeret"></div>
+                <div class="elem"><input type="text" id="word3" name="word3" placeholder="Enter text"></div>
+                <div class="elem symbol">,</div>
+                <div class="elem"><input type="text" id="word4" name="word4" placeholder="Enter text"></div>
+                <div class="elem"><input type="text" id="word5" name="word5" placeholder="Enter text"></div>
+                <div class="elem"><input type="text" id="word6" name="word6" value="mokun"></div>
+                <div class="elem"><input type="text" id="word7" name="word7" value="sogizyd"></div>
+                <div class="elem symbol">,</div>
+            </div>
+            <br>
+            <div class = "rows">
+              <div class="elem"><input type="text" id="word8" name="word8" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word9" name="word9" value="ku`un"></div>
+              <div class="elem"><input type="text" id="word10" name="word10" placeholder="Enter text"></div>
+              <div class="elem symbol">,</div>
+              <div class="elem"><input type="text" id="word11" name="word11" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word12" name="word12" value="dva`un"></div>
+              <div class="elem"><input type="text" id="word13" name="word13" placeholder="Enter text"></div>
+              <div class="elem symbol">,</div>
+            </div>
+            <br>
+            <div class = "rows">
+              <div class="elem"><input type="text" id="word14" name="word14" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word15" name="word15" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word16" name="word16" value="hosruz"></div>
+              <div class="elem"><input type="text" id="word17" name="word17" value="nadva`un"></div>
+              <div class="elem"><input type="text" id="word18" name="word18" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word19" name="word19" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word20" name="word20" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word21" name="word21" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word22" name="word22" placeholder="Enter text"></div>
+              <div class="elem symbol">,</div>
+            </div>
+            <br>
+            <div class = "rows">
+              <div class="elem"><input type="text" id="word23" name="word23" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word24" name="word24" value="hosun"></div>
+              <div class="elem"><input type="text" id="word25" name="word25" placeholder="Enter text"></div>
+              <div class="elem"><input type="text" id="word26" name="word26" value="remet"></div>
+              <div class="elem"><input type="text" id="word27" name="word27" placeholder="Enter text"></div>
+              <div class="elem symbol">.</div>
+            </div>
+            <br>
+         </section>
+
+         <section class="checkBlock">
+            <button>Check</button>
+         </section>
+
+         <section class="gradBlock" style="display: none;">
+         </section>
+
+    </main>
+    <footer>
+      <div> © Y-Grec </div>
+    </footer>
+  </body>
+</html>
