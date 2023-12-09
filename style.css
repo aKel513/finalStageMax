@@ -1,0 +1,142 @@
+
+header h1{
+    width: 100%;
+    text-align: center;
+    font-size: 34px;
+    font-style: italic;
+}
+/*-----------------------------*/
+main {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.ruleBlock h5, .inputBlock h5 {
+    font-size: 18px;
+    font-style: inherit;
+    margin: 15px 0px;
+}
+/*-----------------------------*/
+.ruleBlock{
+    width: 100%;
+    margin: 20px 0px;
+}
+.ruleBlock .descrBlock{
+    width: 100%;
+}
+.ruleBlock .descrBlock.flexBox{
+    display: flex;
+}
+.ruleBlock .descrBlock article{
+    flex-basis: auto;
+    width: 40%;
+    text-align: justify;
+}
+.ruleBlock .descrBlock article.ukr{
+    margin: 0% 3% 0% 7%;
+}
+.ruleBlock .descrBlock article.eng{
+    margin: 0% 7% 0% 3%;
+}
+.ruleBlock .descrBlock article p{
+    margin: 20px 0px;
+}
+.ruleBlock .descrBlock article .verse{
+    font-size: 20px;
+    color: #100274;
+    font-weight: 900;
+}
+/*-----------------------------*/
+.rowDes{
+    display: flex;
+    margin: 5px 0px;
+}
+.rowDes div{
+    margin: 0px 10px;
+    min-height: 15px;
+}
+.rowDes .col1{
+    flex: 5;
+    text-align: end;
+}
+.rowDes .color{
+    flex: 1;
+    width: 15px;
+    height: 15px;
+}
+.rowDes .col3{
+    flex: 5;
+    text-align: justify;
+}
+.success.color{
+    background-color: #2caf25;
+}
+.mistake.color{
+    background-color: #e2ff3b;
+}
+.mistakePlace.color{
+    background-color: #b43bff;
+}
+.error.color{
+    background-color: #ff4722;
+}
+/*-----------------------------*/
+.inputBlock{
+    margin: 10px 0px;
+    width: 100%;
+}
+.inputBlock .rows{
+    display: flex;
+    margin: 0 5%;
+    width: 90%;
+}
+.inputBlock .rows .elem{
+    margin: 0px 5px 0px 15px;
+    font-size: 26px;
+    min-height: 30px;
+    align-self: end;
+}
+.inputBlock .rows input{
+    max-width: 110px;
+    min-width: 60px;
+    font-size: 15px;
+    min-height: 30px;
+}
+.inputBlock  .rows .elem.symbol {
+    margin: 0px;
+}
+
+.inputBlock .elem input.success{
+    border: 3px solid #2caf25;
+    background-color: #88c083;
+}
+.inputBlock .elem input.mistake{
+    border: 3px solid #e2ff3b;
+}
+.inputBlock .elem input.mistakePlace{
+    border: 3px solid #b43bff;
+}
+.inputBlock .elem input.error{
+    border: 3px solid #ff4722;
+}
+/*-----------------------------*/
+.checkBlock {
+    width: 100%;margin: 10px 0px;
+}
+.checkBlock button{
+    height: 100px;
+    width: 100px;
+    border-radius: 70px;
+    color: black;
+    font-size: 25px;
+    background-color: #ff2323;
+}
+/*-----------------------------*/
+footer{
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    font-style: italic;
+    margin: 30px 0px 10px 0px ;
+}
+/*-----------------------------*/
