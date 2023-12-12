@@ -1,23 +1,23 @@
 $(document).ready(function(){
     const SALT = "i#8^*uu";
-    const HASH_WORD4 = ['595bf8aca6783496f45804f1ee782ae6', '238a7beb2aa98eec69bb8c87a3a5b807', '5857a15197da7e2cb27ac79c1df7c8d0', '8d677a55fba358494140215ec3847d08'];
+    const HASH_WORD4 = ['5857a15197da7e2cb27ac79c1df7c8d0', '238a7beb2aa98eec69bb8c87a3a5b807'];
     const HASH_WORD7 = ['ae8ddd2731a67f791be759386ee2cdd8', 'a3f16e0e13008fca49d4f7ccd996bd7f'];
     const HASH_WORD9 = ['3d19467836b301e6ddca9f8ce9471e34', 'f6cca3ccc0e17ec6e93becbdcd208a05'];
     const HASH_WORD12 = ['8af087274d376c735558b5b68b969fbb', 'bb0486486b4f036cbd1ab1151b81951d'];
     const HASH_WORD17 = ['d2e9fc3e872f55491f1f3312258c9f0b', '75dbdcc21bca3478e813c0d5f04239a3'];
     const HASH_WORD21 = ['86693b7716365cf8da2ab2dbc20c45c2', '007df5a0418dabfde62cfe84c3ad9dae'];
     const CORRECT_WORD = [
-        '379eff4c6472c0b6fce840d08ca79983','96f0fcf02b32dfb67908c226f1a2e133', '416f77986735274b7b2312e8037ce4d9',
+        '379eff4c6472c0b6fce840d08ca79983','96f0fcf02b32dfb67908c226f1a2e133', '416f77986735274b7b2312e8037ce4d9', '595bf8aca6783496f45804f1ee782ae6',
         'aa22974056c4ef1285f8697565ebe682', 'b2767bf5d76e85f6a6f6f6cf5f2332c3', 'c893fecf4284259f3baf610b4bfeef33', '2bbfb8e162998fc07d552ffc14103b04',
         'de8a6066f3cf9abd3e5184c3a2658d1d', '1f8b75e6724b043c876a7f36bfa2931f', '2a72875320aedc6f93e1505563922aa5', 'f69402eeb5c6ccb5a2d794a56d1a7e52',
         '04a6c4384aa8c581ae1d4ba230947914', '321a4116cfaf2d34a3a70ec8e69818f7', '939e22f4cddff64d419c88e89653ca0f', 'b432986c44c9e7e4c8315ba21f3a3930',
         '8880b74209d5c468ed0cbc4c0229ff23', '960ecdca0dafc7990a75e66f85c38164', 'bda1d856ff9fcb4f32503c53b0b23608'
-    ].concat(HASH_WORD4, HASH_WORD7, HASH_WORD9, HASH_WORD9, HASH_WORD21);
+    ].concat(HASH_WORD4, HASH_WORD7, HASH_WORD9, HASH_WORD9, HASH_WORD12, HASH_WORD17, HASH_WORD21);
     let openNext = false;
 
     $('.checkBlock button').click(function () {
         //first row
-        simpleVerification('595bf8aca6783496f45804f1ee782ae6', '#word1');
+        verificationCa('#word1');
         verificationW2();
         simpleVerification('379eff4c6472c0b6fce840d08ca79983', '#word3');
         verificationW4();
@@ -39,7 +39,7 @@ $(document).ready(function(){
         verificationW16();
         verificationW17();
         simpleVerification('c893fecf4284259f3baf610b4bfeef33', '#word18');
-        simpleVerification('595bf8aca6783496f45804f1ee782ae6', '#word19');
+        verificationCa('#word19');
         simpleVerification('2bbfb8e162998fc07d552ffc14103b04', '#word20');
         verificationW21();
         simpleVerification('96f0fcf02b32dfb67908c226f1a2e133', '#word22');
@@ -102,6 +102,23 @@ $(document).ready(function(){
        }
 
     }
+	
+	function verificationCa(id) {
+        let hashS = '595bf8aca6783496f45804f1ee782ae6';
+        let element = $(id);
+        let text =  element.val();
+        let strHash = md5(SALT + text.toLowerCase());
+   
+        if (strHash === hashS) {
+         setSuccessClass(element);
+		}else if (HASH_WORD4.includes(strHash)) {
+			 setMistakelass(element);
+		 }else if(CORRECT_WORD.includes(strHash)){
+			 setMistakePlaceClass(element);
+		 }else{
+			 setErrorClass(element);
+		 }
+    }
 
     function verificationW2 () {
      let hashS = 'b432986c44c9e7e4c8315ba21f3a3930';
@@ -117,10 +134,10 @@ $(document).ready(function(){
 
      if (strHash === hashS) {
          setSuccessClass(element);
+	}else if (hashM.includes(strHash)) {
+         setMistakelass(element);
      }else if(CORRECT_WORD.includes(strHash)){
          setMistakePlaceClass(element);
-     }else if (hashM.includes(strHash)) {
-         setMistakelass(element);
      }else{
          setErrorClass(element);
      }
@@ -129,16 +146,20 @@ $(document).ready(function(){
 
     function verificationW4 () {
         let element = $('#word4');
+		let hashM = '595bf8aca6783496f45804f1ee782ae6';
         let text =  element.val();
         let strHash = md5(SALT + text.toLowerCase());
- 
+		
         if (HASH_WORD4.includes(strHash)) {
             setSuccessClass(element);
-        }else if(CORRECT_WORD.includes(strHash)){
-            setMistakePlaceClass(element);
-        }else {
-            setErrorClass(element);
-        }
+		}else if (hashM === strHash) {
+			 setMistakelass(element);
+		 }else if(CORRECT_WORD.includes(strHash)){
+			 setMistakePlaceClass(element);
+		 }else{
+			 setErrorClass(element);
+		 }
+		
     }
 
     function verificationW5 () {
@@ -149,10 +170,10 @@ $(document).ready(function(){
  
         if (strHash === hash[0]) {
             setSuccessClass(element);
+		}else if (strHash === hash[1]) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (strHash === hash[1]) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -173,10 +194,10 @@ $(document).ready(function(){
    
         if (strHash === hashS) {
             setSuccessClass(element);
+		}else if (hashM.includes(strHash)) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (hashM.includes(strHash)) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -191,10 +212,10 @@ $(document).ready(function(){
 
         if (HASH_WORD7.includes(strHash)) {
             setSuccessClass(element);
+		}else if (hashM.includes(strHash)) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (hashM.includes(strHash)) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -213,10 +234,10 @@ $(document).ready(function(){
 
         if (HASH_WORD9.includes(strHash)) {
             setSuccessClass(element);
+		}else if (hashM.includes(strHash)) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (hashM.includes(strHash)) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -231,10 +252,10 @@ $(document).ready(function(){
 
         if (strHash === hashS) {
             setSuccessClass(element);
+		}else if (hashM.includes(strHash)) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (hashM.includes(strHash)) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -254,13 +275,13 @@ $(document).ready(function(){
 
        if (HASH_WORD12.includes(strHash)) {
            setSuccessClass(element);
-       }else if(CORRECT_WORD.includes(strHash)){
-           setMistakePlaceClass(element);
-       }else if (hashM.includes(strHash)) {
+		}else if (hashM.includes(strHash)) {
            setMistakelass(element);
-       }else{
+		}else if(CORRECT_WORD.includes(strHash)){
+           setMistakePlaceClass(element);
+		}else{
            setErrorClass(element);
-       }
+		}
 
     }
 
@@ -272,10 +293,10 @@ $(document).ready(function(){
  
         if (strHash === hash[0]) {
             setSuccessClass(element);
+		}else if (strHash === hash[1]) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (strHash === hash[1]) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -290,10 +311,10 @@ $(document).ready(function(){
 
         if (strHash === hashS) {
             setSuccessClass(element);
+		}else if (hashM.includes(strHash)) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (hashM.includes(strHash)) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -318,10 +339,10 @@ $(document).ready(function(){
 
         if (HASH_WORD17.includes(strHash)) {
             setSuccessClass(element);
+		}else if (hashM.includes(strHash)) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (hashM.includes(strHash)) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -356,10 +377,10 @@ $(document).ready(function(){
 
         if (strHash === hashS) {
             setSuccessClass(element);
+		}else if (hashM.includes(strHash)) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (hashM.includes(strHash)) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
@@ -374,10 +395,10 @@ $(document).ready(function(){
 
         if (strHash === hashS) {
             setSuccessClass(element);
+		}else if (hashM.includes(strHash)) {
+            setMistakelass(element);
         }else if(CORRECT_WORD.includes(strHash)){
             setMistakePlaceClass(element);
-        }else if (hashM.includes(strHash)) {
-            setMistakelass(element);
         }else{
             setErrorClass(element);
         }
