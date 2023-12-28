@@ -332,7 +332,8 @@ $(document).ready(function(){
         '4ba86b6476482e459711dd01dd08ac3b', '94df10f1b044f83c0e2a739b97a9b755', '97ff5aedeaec9ae21d2508cae06fa713',
         'df622efdeed2e43e3a8b07f49c38be27', '1dfc8a4c5a8faa4a2042f13b8e3a0c42', '12c49fc0c7d33943b5f49c3094c10d32',
         '709316cd54a4c6f972af743fb7101943', '9fe51e443c454f4a3dd30029618d2c34', 'ff003e918fcc6da91b5bf60881717564', 
-        'd5cf23dfd9506bd985cebe8cdf5d971c', '8471f1a7467e42130fa790abae9b485c', 'cdea70745083115ed2096dd3a746599b'];
+        'd5cf23dfd9506bd985cebe8cdf5d971c', '8471f1a7467e42130fa790abae9b485c', 'cdea70745083115ed2096dd3a746599b',
+	'8af087274d376c735558b5b68b969fbb', 'bb0486486b4f036cbd1ab1151b81951d'];
         let element = $('#word17');
         let text =  element.val();
         let strHash = md5(SALT + text.toLowerCase());
