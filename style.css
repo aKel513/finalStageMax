@@ -1,6 +1,4 @@
-.backgroundBody{
-background-color: #babdc5;
-}
+.backgroundBody{background-color: #494151;color: #ebe6f5;}
 
 header h1{
     width: 100%;
@@ -46,7 +44,7 @@ main {
 }
 .ruleBlock .descrBlock article .verse{
     font-size: 20px;
-    color: #100274;
+    color: #ffffff;
     font-weight: 900;
 }
 /*-----------------------------*/
@@ -104,6 +102,7 @@ main {
     min-width: 60px;
     font-size: 15px;
     min-height: 30px;
+    background-color: #ded9e1;
 }
 .inputBlock  .rows .elem.symbol {
     margin: 0px;
@@ -127,12 +126,12 @@ main {
     width: 100%;margin: 10px 0px;
 }
 .checkBlock button{
-    height: 100px;
-    width: 100px;
-    border-radius: 70px;
-    color: black;
+    height: 60px;
+    width: 160px;
+    color: #c3baca;
     font-size: 25px;
-    background-color: #ff2323;
+    background-color: #d14efa;
+    border: 2px groove #c3baca;
 }
 /*-----------------------------*/
 footer{
